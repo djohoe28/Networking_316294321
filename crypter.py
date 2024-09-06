@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Optional
 
 from cryptography.fernet import Fernet
@@ -5,27 +6,27 @@ from cryptography.fernet import Fernet
 
 class Crypter:
     """
-    Responsible for encrypting/decrypting strings using a :class:`Fernet` :class:`bytes` key.
+    Responsible for encrypting/decrypting data with :py:attr:`key`.
 
-    :ivar bytes key: The key :class:`bytes` used for encryption/decryption; Generated with :class:`Fernet` if not given.
-    :ivar Fernet fernet: The underlying :class:`Fernet` instance used for encryption/decryption.
+    :ivar key: The key :class:`bytes` used for encryption/decryption; Generated with :class:`Fernet` if not given.
+    :ivar fernet: The underlying :class:`Fernet` instance used for encryption/decryption.
     """
     key: bytes
     fernet: Fernet
 
     def __init__(self, key: Optional[bytes] = None):
         """
-        Constructs a new :class:`Crypter` instance using the given key, or generates a new key if none given.
+        :class:`Crypter` Constructor.
 
-        :param bytes key: The key used for :class:`Fernet` encryption/decryption; Generate one if none given.
+        :param key: The :class:`bytes` key used for :class:`Fernet` encryption/decryption; Generate if none given.
         """
         self.key = key if key is not None else Fernet.generate_key()
         self.fernet = Fernet(self.key)
 
     @classmethod
-    def load(cls, path: str):
+    def load(cls, path: Path):
         """
-        Returns a new instance loaded from the file at the given path.
+        Returns a new instance with a :class:`bytes` :py:attr:`key` loaded from the file at the given :class:`Path`.
 
         :param path: Path to key-file to read from.
         :return: The newly-constructed instance.
@@ -33,11 +34,11 @@ class Crypter:
         with open(path, "rb") as fp:
             return cls(key=fp.read())
 
-    def save(self, path: str):
+    def save(self, path: Path):
         """
-        Saves :py:attr:`key` as a file to the given path. Overwrites if exists.
+        Saves :py:attr:`key` to file in the given path. Overwrite if exists.
 
-        :param path: Path to save to.
+        :param path: :class:`Path` to save to.
         :return: None
         """
         with open(path, "wb") as fp:
@@ -61,7 +62,7 @@ class Crypter:
         """
         return self.fernet.decrypt(data)
 
-    def encrypt_to_file(self, data: bytes, path: str):
+    def encrypt_to_file(self, data: bytes, path: Path):
         """
         Encrypts the given data and saves it to the given path.
 
@@ -72,7 +73,7 @@ class Crypter:
         with open(path, "wb") as fp:
             fp.write(self.encrypt(data))
 
-    def decrypt_from_file(self, path: str):
+    def decrypt_from_file(self, path: Path):
         """
         Loads the data at the given path, and decrypts it.
 

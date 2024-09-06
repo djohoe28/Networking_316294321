@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3dcd969-8d82-4e80-b013-6fb8013e1644" name="Changes" comment="Initial commit." />
+    <list default="true" id="e3dcd969-8d82-4e80-b013-6fb8013e1644" name="Changes" comment="nominatim_args.py complete.">
+      <change afterPath="$PROJECT_DIR$/crypter_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nominatim_cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/djohoe28/Networking_316294321",
-    "accountId": "3bb4f11d-17a2-47bf-936e-181309f2d2dc"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;djohoe28&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/djohoe28/Networking_316294321&quot;,
+    &quot;accountId&quot;: &quot;3bb4f11d-17a2-47bf-936e-181309f2d2dc&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2lX08RmahFXKNveNQIS15G12Rva" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,13 +48,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.book.executor": "Run",
+    "Python.location.executor": "Run",
+    "Python.locations.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.nominatim_api.executor": "Run",
+    "Python.nominatim_cli.executor": "Run",
+    "Python.requester.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="nominatim_cli" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Networking_316294321" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -46,8 +74,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nominatim_cli.py" />
+      <option name="PARAMETERS" value="-s &quot;White House&quot; -s Vatican -s &quot;Burgeranch HaKnesset&quot; -l W228034523 -k &quot;Secret Key&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -55,6 +83,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.nominatim_cli" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -80,22 +113,101 @@
       <option name="project" value="LOCAL‎" />
       <updated>1725311166161</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="workspace.xml update">
+      <option name="closed" value="true" />
+      <created>1725311488355</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725311488355</updated>
+    </task>
+    <task id="LOCAL‎-00003" summary="crypter.py complete.">
+      <option name="closed" value="true" />
+      <created>1725634624288</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725634624289</updated>
+    </task>
+    <task id="LOCAL‎-00004" summary="location.py data class complete.">
+      <option name="closed" value="true" />
+      <created>1725634993837</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725634993837</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="nominatim_api.py complete.">
+      <option name="closed" value="true" />
+      <created>1725635009078</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725635009078</updated>
+    </task>
+    <task id="LOCAL‎-00006" summary="crypter.py linting.">
+      <option name="closed" value="true" />
+      <created>1725635787143</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725635787143</updated>
+    </task>
+    <task id="LOCAL‎-00007" summary="crypter.py documentation linting.">
+      <option name="closed" value="true" />
+      <created>1725635941639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725635941639</updated>
+    </task>
+    <task id="LOCAL‎-00008" summary="location.py UID streamlined.">
+      <option name="closed" value="true" />
+      <created>1725645426383</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725645426383</updated>
+    </task>
+    <task id="LOCAL‎-00009" summary="nominatim_api.py streamlined.">
+      <option name="closed" value="true" />
+      <created>1725645449913</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725645449913</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="FIX: locations.py added">
+      <option name="closed" value="true" />
+      <created>1725645475934</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725645475934</updated>
+    </task>
+    <task id="LOCAL‎-00011" summary="nominatim_args.py complete.">
+      <option name="closed" value="true" />
+      <created>1725653586507</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725653586507</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="workspace.xml update" />
+    <MESSAGE value="crypter.py complete." />
+    <MESSAGE value="location.py data class complete." />
+    <MESSAGE value="nominatim_api.py complete." />
+    <MESSAGE value="crypter.py linting." />
+    <MESSAGE value="crypter.py documentation linting." />
+    <MESSAGE value="location.py UID streamlined." />
+    <MESSAGE value="nominatim_api.py streamlined." />
+    <MESSAGE value="FIX: locations.py added" />
+    <MESSAGE value="nominatim_args.py complete." />
+    <option name="LAST_COMMIT_MESSAGE" value="nominatim_args.py complete." />
   </component>
 </project>

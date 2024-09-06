@@ -60,4 +60,4 @@ class Location:
 
         .. _attempted: https://nominatim.org/release-docs/latest/api/Output/#place_id-is-not-a-persistent-id
         """
-        return "+".join([self.osm_type, str(self.osm_id), self.category])
+        return f"{self.osm_type[0]}{self.osm_id}&{self.category}={self.type}"

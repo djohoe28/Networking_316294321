@@ -2,6 +2,7 @@ from argparse import ArgumentParser, Namespace
 from pathlib import Path
 from typing import Sequence
 
+from append_key_value_action import AppendKeyValueAction
 from nominatim_args import NominatimArgs
 
 
@@ -23,12 +24,13 @@ class NominatimCLI:
 
     def __init__(self):
         """:py:class:`NominatimCLI` Constructor."""
-        # TODO: Search / Lookup optional Locations.keys.
         parser = ArgumentParser()
         parser.add_argument("-i", "--input", type=Path, help="Path to import locations from.")
         parser.add_argument("-o", "--output", type=Path, help="Path to export locations to.")
-        parser.add_argument("-s", "--search", action="append", help="Search queries ("" for spaces)")
-        parser.add_argument("-l", "--lookup", action="append", help="Lookup OSM IDs ("" for spaces)")
+        parser.add_argument("-s", "--search", action=AppendKeyValueAction, nargs='*',
+                            help="Search queries; Surround with quotes for spaces, may prefix with key.")
+        parser.add_argument("-l", "--lookup", action=AppendKeyValueAction, nargs='*',
+                            help="Lookup OSM IDs; Surround with quotes for spaces, may prefix with key.")
         key_group = parser.add_mutually_exclusive_group()
         key_group.add_argument("-k", "--key", dest="string", help="Key string to use for en/decryption.")
         key_group.add_argument("-f", "--file", help="Path to key-file to use for en/decryption.")

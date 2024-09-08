@@ -39,5 +39,9 @@ class NominatimCLI:
         return NominatimArgs(**self.parser.parse_args(args, namespace).__dict__)
 
 
-if __name__ == "__main__":
+def main():
     print(NominatimCLI().parse_args())
+
+
+if __name__ == "__main__":
+    main()

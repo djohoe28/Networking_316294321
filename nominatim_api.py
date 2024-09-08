@@ -93,8 +93,12 @@ class NominatimAPI:
         return Locations({key: cls.lookup(deflated[key]) for key in deflated})
 
 
-if __name__ == "__main__":
+def main():
     logging.basicConfig(level=logging.INFO)
     book = Locations({query: NominatimAPI.search(query) for query in ["Burgeranch HaKnesset", "Vatican City"]})
     book.add(NominatimAPI.lookup("W228034523"), "Tel Hai Parking Lot")
     print(NominatimAPI.inflate(book.deflated))
+
+
+if __name__ == "__main__":
+    main()

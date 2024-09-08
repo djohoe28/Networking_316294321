@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3dcd969-8d82-4e80-b013-6fb8013e1644" name="Changes" comment="nominatim_args.py complete.">
+    <list default="true" id="e3dcd969-8d82-4e80-b013-6fb8013e1644" name="Changes" comment="Added `run` to nominatim_cli.py">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Help.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Output.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Print.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/crypter_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nominatim_cli.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nominatim_cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/nominatim_cli.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,19 +52,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.book.executor": "Run",
+    "Python.keyval_action.executor": "Debug",
     "Python.location.executor": "Run",
     "Python.locations.executor": "Run",
     "Python.main.executor": "Run",
     "Python.nominatim_api.executor": "Run",
+    "Python.nominatim_cli (2).executor": "Debug",
+    "Python.nominatim_cli - Print.executor": "Run",
     "Python.nominatim_cli.executor": "Run",
     "Python.requester.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="nominatim_cli" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.nominatim_cli - Output">
+    <configuration name="append_key_value_action" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Networking_316294321" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,8 +81,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nominatim_cli.py" />
-      <option name="PARAMETERS" value="-s &quot;White House&quot; -s Vatican -s &quot;Burgeranch HaKnesset&quot; -l W228034523 -k &quot;Secret Key&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/append_key_value_action.py" />
+      <option name="PARAMETERS" value="--something val1 -s &quot;key 2&quot; val2" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -83,9 +90,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.nominatim_cli - Print" />
+      <item itemvalue="Python.nominatim_cli - Help" />
+      <item itemvalue="Python.nominatim_cli - Output" />
+      <item itemvalue="Python.append_key_value_action" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.nominatim_cli" />
+        <item itemvalue="Python.nominatim_cli - Print" />
+        <item itemvalue="Python.nominatim_cli - Output" />
+        <item itemvalue="Python.nominatim_cli - Help" />
+        <item itemvalue="Python.append_key_value_action" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +209,87 @@
       <option name="project" value="LOCAL‎" />
       <updated>1725653586507</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎-00012" summary="nominatim_cli.py complete.&#10;TODO: Search / Lookup optional Locations.keys.">
+      <option name="closed" value="true" />
+      <created>1725653646473</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725653646473</updated>
+    </task>
+    <task id="LOCAL‎-00013" summary="workspace.xml update.">
+      <option name="closed" value="true" />
+      <created>1725653662557</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725653662557</updated>
+    </task>
+    <task id="LOCAL‎-00014" summary="Refactored __main__ to main()">
+      <option name="closed" value="true" />
+      <created>1725772661257</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725772661257</updated>
+    </task>
+    <task id="LOCAL‎-00015" summary="append_key_val_action.py added.">
+      <option name="closed" value="true" />
+      <created>1725772791741</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725772791741</updated>
+    </task>
+    <task id="LOCAL‎-00016" summary="append_key_val_action.py renamed to append_key_value_action.py">
+      <option name="closed" value="true" />
+      <created>1725772839616</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL‎-00016" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725772839616</updated>
+    </task>
+    <task id="LOCAL‎-00017" summary="Added AppendKeyValueAction to nominatim_cli.py">
+      <option name="closed" value="true" />
+      <created>1725773018536</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL‎-00017" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725773018536</updated>
+    </task>
+    <task id="LOCAL‎-00018" summary="Added `get_locations` to nominatim_cli.py">
+      <option name="closed" value="true" />
+      <created>1725773776165</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725773776165</updated>
+    </task>
+    <task id="LOCAL‎-00019" summary="Added `__add__` to locations.py">
+      <option name="closed" value="true" />
+      <created>1725778139504</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL‎-00019" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725778139504</updated>
+    </task>
+    <task id="LOCAL‎-00020" summary="Added `deserialize` &amp; `decode` to nominatim_api.py">
+      <option name="closed" value="true" />
+      <created>1725778171538</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL‎-00020" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725778171538</updated>
+    </task>
+    <task id="LOCAL‎-00021" summary="Added `run` to nominatim_cli.py">
+      <option name="closed" value="true" />
+      <created>1725778202299</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL‎-00021" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725778202299</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,6 +304,27 @@
     <MESSAGE value="nominatim_api.py streamlined." />
     <MESSAGE value="FIX: locations.py added" />
     <MESSAGE value="nominatim_args.py complete." />
-    <option name="LAST_COMMIT_MESSAGE" value="nominatim_args.py complete." />
+    <MESSAGE value="nominatim_cli.py complete.&#10;TODO: Search / Lookup optional Locations.keys." />
+    <MESSAGE value="workspace.xml update." />
+    <MESSAGE value="Refactored __main__ to main()" />
+    <MESSAGE value="append_key_val_action.py added." />
+    <MESSAGE value="append_key_val_action.py renamed to append_key_value_action.py" />
+    <MESSAGE value="Added AppendKeyValueAction to nominatim_cli.py" />
+    <MESSAGE value="Added `get_locations` to nominatim_cli.py" />
+    <MESSAGE value="Added `__add__` to locations.py" />
+    <MESSAGE value="Added `deserialize` &amp; `decode` to nominatim_api.py" />
+    <MESSAGE value="Added `run` to nominatim_cli.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added `run` to nominatim_cli.py" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/nominatim_cli.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

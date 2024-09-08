@@ -22,6 +22,7 @@ class NominatimCLI:
 
     def __new__(cls, *args, **kwargs):
         """Force Singleton (create :py:attr:`instance` if None, else return it)."""
+        # TODO: Singleton? Static? Something else?
         if not hasattr(cls, 'instance'):
             cls.instance = super(NominatimCLI, cls).__new__(cls)
         return cls.instance
@@ -70,6 +71,7 @@ class NominatimCLI:
 
 
 def main():
+    # TODO: REPL
     result = NominatimCLI().run()
     print(result)
 

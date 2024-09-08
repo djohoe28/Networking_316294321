@@ -1,8 +1,11 @@
+import os.path
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 from typing import Sequence
 
 from append_key_value_action import AppendKeyValueAction
+from crypter import Crypter
+from locations import Locations
 from nominatim_api import NominatimAPI
 from nominatim_args import NominatimArgs
 
@@ -25,7 +28,7 @@ class NominatimCLI:
 
     def __init__(self):
         """:py:class:`NominatimCLI` Constructor."""
-        parser = ArgumentParser()
+        parser = ArgumentParser(description="A simple CLI to query the Nominatim API and en/decode the results.")
         parser.add_argument("-i", "--input", type=Path, help="Path to import locations from.")
         parser.add_argument("-o", "--output", type=Path, help="Path to export locations to.")
         parser.add_argument("-s", "--search", action=AppendKeyValueAction, nargs='*',
@@ -41,17 +44,33 @@ class NominatimCLI:
         """Wrapper for :py:func:`ArgumentParser.parse_args` as :py:class:`NominatimArgs`."""
         return NominatimArgs(**self.parser.parse_args(args, namespace).__dict__)
 
-    def get_locations(self, args: Sequence[str] | None = None, namespace: Namespace | None = None):
+    def run(self, args: Sequence[str] | None = None, namespace: Namespace | None = None):
+        # TODO: Compartmentalize.
         parsed_args = self.parse_args(args, namespace)
-        searches = {key: NominatimAPI.search(parsed_args.search[key]) for key in parsed_args.search}
-        lookups = {key: NominatimAPI.lookup(parsed_args.lookup[key]) for key in parsed_args.lookup}
-        combined = searches.copy()
-        combined.update(lookups)
-        return combined
+        if parsed_args.key is not None:
+            crypter = Crypter(parsed_args.key)
+        else:
+            crypter = Crypter()
+        if parsed_args.input is not None and os.path.exists(parsed_args.input):
+            input_locations = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.input))
+        else:
+            input_locations = Locations()
+        if parsed_args.search is not None:
+            search_locations = Locations({key: NominatimAPI.search(parsed_args.search[key]) for key in parsed_args.search})
+        else:
+            search_locations = Locations()
+        if parsed_args.lookup is not None:
+            lookup_locations = Locations({key: NominatimAPI.lookup(parsed_args.lookup[key]) for key in parsed_args.lookup})
+        else:
+            lookup_locations = Locations()
+        combined_locations = input_locations + search_locations + lookup_locations
+        if parsed_args.output is not None:
+            crypter.encrypt_to_file(combined_locations.__bytes__(), parsed_args.output)
+        return combined_locations
 
 
 def main():
-    result = NominatimCLI().get_locations()
+    result = NominatimCLI().run()
     print(result)
 
 

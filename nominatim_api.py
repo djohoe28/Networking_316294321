@@ -1,3 +1,4 @@
+import json
 import logging
 import time
 from logging import getLogger
@@ -91,6 +92,26 @@ class NominatimAPI:
         :return: Inflated :py:class:`Locations`.
         """
         return Locations({key: cls.lookup(deflated[key]) for key in deflated})
+
+    @classmethod
+    def deserialize(cls, serialized: str):
+        """
+        # TODO: Document.
+
+        :param serialized:
+        :return:
+        """
+        return cls.inflate(json.loads(serialized))
+
+    @classmethod
+    def decode(cls, encoded: bytes):
+        """
+        # TODO: Document.
+
+        :param encoded:
+        :return:
+        """
+        return cls.deserialize(encoded.decode())
 
 
 def main():

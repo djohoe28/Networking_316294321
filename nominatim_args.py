@@ -17,8 +17,8 @@ class NominatimArgs(Namespace):
     """
     input: Path
     output: Path
-    lookup: Optional[list[str]]
-    search: Optional[list[str]]
+    lookup: Optional[dict[str, str]]
+    search: Optional[dict[str, str]]
     string: Optional[str] = None
     file: Optional[Path] = None
     key: Optional[bytes] = None

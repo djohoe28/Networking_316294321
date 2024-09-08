@@ -53,21 +53,21 @@ class NominatimCLI:
         else:
             crypter = Crypter()
         if parsed_args.input is not None and os.path.exists(parsed_args.input):
-            input_locations = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.input))
+            inputs = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.input))
         else:
-            input_locations = Locations()
+            inputs = Locations()
         if parsed_args.search is not None:
-            search_locations = Locations({key: NominatimAPI.search(parsed_args.search[key]) for key in parsed_args.search})
+            searches = Locations({key: NominatimAPI.search(parsed_args.search[key]) for key in parsed_args.search})
         else:
-            search_locations = Locations()
+            searches = Locations()
         if parsed_args.lookup is not None:
-            lookup_locations = Locations({key: NominatimAPI.lookup(parsed_args.lookup[key]) for key in parsed_args.lookup})
+            lookups = Locations({key: NominatimAPI.lookup(parsed_args.lookup[key]) for key in parsed_args.lookup})
         else:
-            lookup_locations = Locations()
-        combined_locations = input_locations + search_locations + lookup_locations
+            lookups = Locations()
+        combined = inputs + searches + lookups
         if parsed_args.output is not None:
-            crypter.encrypt_to_file(combined_locations.__bytes__(), parsed_args.output)
-        return combined_locations
+            crypter.encrypt_to_file(combined.__bytes__(), parsed_args.output)
+        return combined
 
 
 def main():

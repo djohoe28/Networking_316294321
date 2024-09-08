@@ -41,3 +41,14 @@ class Locations:
     def __bytes__(self):
         """The (:py:attr:`deflated`) :py:attr:`serialized` string representation of self, encoded as :class:`bytes`."""
         return self.serialized.encode()
+
+    def __add__(self, other: 'Locations'):
+        """
+        # TODO: Document.
+
+        :param other:
+        :return:
+        """
+        combined = self.locations.copy()
+        combined.update(other.locations)
+        return Locations(combined)

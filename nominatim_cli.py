@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Sequence
 
 from append_key_value_action import AppendKeyValueAction
+from nominatim_api import NominatimAPI
 from nominatim_args import NominatimArgs
 
 
@@ -40,9 +41,18 @@ class NominatimCLI:
         """Wrapper for :py:func:`ArgumentParser.parse_args` as :py:class:`NominatimArgs`."""
         return NominatimArgs(**self.parser.parse_args(args, namespace).__dict__)
 
+    def get_locations(self, args: Sequence[str] | None = None, namespace: Namespace | None = None):
+        parsed_args = self.parse_args(args, namespace)
+        searches = {key: NominatimAPI.search(parsed_args.search[key]) for key in parsed_args.search}
+        lookups = {key: NominatimAPI.lookup(parsed_args.lookup[key]) for key in parsed_args.lookup}
+        combined = searches.copy()
+        combined.update(lookups)
+        return combined
+
 
 def main():
-    print(NominatimCLI().parse_args())
+    result = NominatimCLI().get_locations()
+    print(result)
 
 
 if __name__ == "__main__":

@@ -7,16 +7,16 @@ class NominatimArgs(Namespace):
     """
     :py:class:`Namespace` Wrapper for a :py:class:`NominatimAPI` :py:class:`argparse.ArgumentParser`.
 
-    :ivar input: Path to input :py:class:`locations.Locations` from.
-    :ivar output: Path to output :py:class:`locations.Locations` to.
+    :ivar imports: Path to input :py:class:`locations.Locations` from.
+    :ivar exports: Path to output :py:class:`locations.Locations` to.
     :ivar lookup: Queries for the :py:func:`NominatimAPI.lookup` endpoint.
     :ivar search: Queries for the :py:func:`NominatimAPI.search` endpoint.
     :ivar string: Key Source (Mutex) - generate :py:attr:`key` from :py:class:`str`.
     :ivar file: Key Source (Mutex) - generate :py:attr:`key` from file in :py:class:`Path`.
     :ivar key: The :py:class:`cryptography.fernet.Fernet` key to use for en/decryption.
     """
-    input: Path
-    output: Path
+    imports: Path
+    exports: Path
     lookup: Optional[dict[str, str]]
     search: Optional[dict[str, str]]
     string: Optional[str] = None

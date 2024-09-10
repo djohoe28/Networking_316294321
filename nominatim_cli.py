@@ -29,16 +29,20 @@ class NominatimCLI:
 
     def __init__(self):
         """:py:class:`NominatimCLI` Constructor."""
-        parser = ArgumentParser(description="A simple CLI to query the Nominatim API and en/decode the results.")
-        parser.add_argument("-i", "--input", type=Path, help="Path to import locations from.")
-        parser.add_argument("-o", "--output", type=Path, help="Path to export locations to.")
+        parser = ArgumentParser(description="A Command Line Interface to query Nominatim API and en/decode results.")
+        parser.add_argument("-i", "--import", dest="imports", type=Path,  # action="append",
+                            help="Path to import locations from.")
+        parser.add_argument("-e", "--export", dest="exports", type=Path,  # action="append",
+                            help="Path to export locations to.")
         parser.add_argument("-s", "--search", action=AppendKeyValueAction, nargs='*',
                             help="Search queries; Surround with quotes for spaces, may prefix with key.")
         parser.add_argument("-l", "--lookup", action=AppendKeyValueAction, nargs='*',
                             help="Lookup OSM IDs; Surround with quotes for spaces, may prefix with key.")
         key_group = parser.add_mutually_exclusive_group()
-        key_group.add_argument("-k", "--key", dest="string", help="Key string to use for en/decryption.")
-        key_group.add_argument("-f", "--file", help="Path to key-file to use for en/decryption.")
+        key_group.add_argument("-k", "--key", dest="string",  # action="append",
+                               help="(Fernet-valid) Key string to use for en/decryption.")
+        key_group.add_argument("-f", "--file", action="append",
+                               help="Path to key-file to use for en/decryption.")
         self.parser = parser
 
     def parse_args(self, args: Sequence[str] | None = None, namespace: Namespace | None = None):
@@ -49,14 +53,14 @@ class NominatimCLI:
         # TODO: Compartmentalize.
         parsed_args = self.parse_args(args, namespace)
         crypter = Crypter(parsed_args.key)
-        inputs = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.input)) \
-            if parsed_args.input and os.path.exists(parsed_args.input) \
+        imports = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.imports)) \
+            if parsed_args.imports and os.path.exists(parsed_args.imports) \
             else Locations()
         searches = Locations({k: NominatimAPI.search(v) for k, v in (parsed_args.search or {}).items()})
         lookups = Locations({k: NominatimAPI.lookup(v) for k, v in (parsed_args.lookup or {}).items()})
-        combined = inputs + searches + lookups
-        if parsed_args.output:
-            crypter.encrypt_to_file(combined.__bytes__(), parsed_args.output)
+        combined = imports + searches + lookups
+        if parsed_args.exports:
+            crypter.encrypt_to_file(combined.__bytes__(), parsed_args.exports)
         return combined
 
 

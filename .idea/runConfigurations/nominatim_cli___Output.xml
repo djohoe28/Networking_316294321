@@ -13,7 +13,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nominatim_cli.py" />
-    <option name="PARAMETERS" value="-s Obama &quot;White House&quot; -s &quot;The Pope&quot; Vatican -s &quot;Burgeranch HaKnesset&quot; -l W228034523 -k &quot;iQuZfgyy4kmEnJgWVKPTLk8uwHdi1lGaEvpdTeSQx6c=&quot; --output locations.dat" />
+    <option name="PARAMETERS" value="-s Obama &quot;White House&quot; -s &quot;The Pope&quot; Vatican -s &quot;Burgeranch HaKnesset&quot; -l W228034523 -k &quot;iQuZfgyy4kmEnJgWVKPTLk8uwHdi1lGaEvpdTeSQx6c=&quot; --export locations.dat" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

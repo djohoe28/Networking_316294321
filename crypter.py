@@ -1,3 +1,4 @@
+import time
 from pathlib import Path
 from typing import Optional
 
@@ -21,6 +22,12 @@ class Crypter:
         :param key: The :class:`bytes` key used for :class:`Fernet` encryption/decryption; Generate if none given.
         """
         self.key = key if key is not None else Fernet.generate_key()
+        if key is None:
+            # No key has been provided, therefore we need to log the generated key.
+            path = f"{time.time()}.key"
+            with open(path, "wb") as fp:
+                fp.write(self.key)
+            print(f"Key has been set to {self.key}; Exported to {path}.")
         self.fernet = Fernet(self.key)
 
     @classmethod

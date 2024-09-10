@@ -52,6 +52,7 @@ class NominatimAPI:
         :param parameter: Query for the endpoint; May contain additional parameters (e.g: "<value1>&<param2>=<value2>")
         :return: The first matching :py:class:`Location` received from Nominatim.
         """
+        print(f"{endpoint.upper()}: {parameter}...")
         cls.limit()
         parsed = dict(parse_qsl(f"{cls.API_PARAM_BY_ENDPOINT[endpoint]}={parameter}"))  # Parse parameter(s) to dict.
         params = {**cls.API_PARAMS, **parsed}  # Combine default params with parsed parameter(s).

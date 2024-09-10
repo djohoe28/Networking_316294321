@@ -48,24 +48,14 @@ class NominatimCLI:
     def run(self, args: Sequence[str] | None = None, namespace: Namespace | None = None):
         # TODO: Compartmentalize.
         parsed_args = self.parse_args(args, namespace)
-        if parsed_args.key is not None:
-            crypter = Crypter(parsed_args.key)
-        else:
-            crypter = Crypter()
-        if parsed_args.input is not None and os.path.exists(parsed_args.input):
-            inputs = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.input))
-        else:
-            inputs = Locations()
-        if parsed_args.search is not None:
-            searches = Locations({key: NominatimAPI.search(parsed_args.search[key]) for key in parsed_args.search})
-        else:
-            searches = Locations()
-        if parsed_args.lookup is not None:
-            lookups = Locations({key: NominatimAPI.lookup(parsed_args.lookup[key]) for key in parsed_args.lookup})
-        else:
-            lookups = Locations()
+        crypter = Crypter(parsed_args.key)
+        inputs = NominatimAPI.decode(crypter.decrypt_from_file(parsed_args.input)) \
+            if parsed_args.input and os.path.exists(parsed_args.input) \
+            else Locations()
+        searches = Locations({k: NominatimAPI.search(v) for k, v in (parsed_args.search or {}).items()})
+        lookups = Locations({k: NominatimAPI.lookup(v) for k, v in (parsed_args.lookup or {}).items()})
         combined = inputs + searches + lookups
-        if parsed_args.output is not None:
+        if parsed_args.output:
             crypter.encrypt_to_file(combined.__bytes__(), parsed_args.output)
         return combined
 

@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3dcd969-8d82-4e80-b013-6fb8013e1644" name="Changes" comment="added print in nominatim_api.py&#10;linting for nominatim_cli.py">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Output.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Print.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/nominatim_cli___Print.xml" afterDir="false" />
+    <list default="true" id="e3dcd969-8d82-4e80-b013-6fb8013e1644" name="Changes" comment="workspace.xml updated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypter.py" beforeDir="false" afterPath="$PROJECT_DIR$/crypter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nominatim_args.py" beforeDir="false" afterPath="$PROJECT_DIR$/nominatim_args.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nominatim_cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/nominatim_cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Networking_316294321\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,25 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.book.executor": "Run",
-    "Python.keyval_action.executor": "Debug",
-    "Python.location.executor": "Run",
-    "Python.locations.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.nominatim_api.executor": "Run",
-    "Python.nominatim_cli (2).executor": "Debug",
-    "Python.nominatim_cli - Output.executor": "Run",
-    "Python.nominatim_cli - Print.executor": "Run",
-    "Python.nominatim_cli.executor": "Run",
-    "Python.requester.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.book.executor&quot;: &quot;Run&quot;,
+    &quot;Python.keyval_action.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.location.executor&quot;: &quot;Run&quot;,
+    &quot;Python.locations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nominatim_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nominatim_cli (2).executor&quot;: &quot;Debug&quot;,
+    &quot;Python.nominatim_cli - Output.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nominatim_cli - Print.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nominatim_cli.executor&quot;: &quot;Run&quot;,
+    &quot;Python.requester.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.nominatim_cli - Print">
     <configuration name="append_key_value_action" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Networking_316294321" />
@@ -311,7 +309,55 @@
       <option name="project" value="LOCAL‎" />
       <updated>1725968659351</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎-00025" summary="Updated run configurations from &quot;input&quot;/&quot;output&quot; to &quot;import&quot;/&quot;export&quot;">
+      <option name="closed" value="true" />
+      <created>1725974264639</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725974264639</updated>
+    </task>
+    <task id="LOCAL‎-00026" summary="Added key logging to crypter.py">
+      <option name="closed" value="true" />
+      <created>1725974280777</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725974280777</updated>
+    </task>
+    <task id="LOCAL‎-00027" summary="Updated main.py">
+      <option name="closed" value="true" />
+      <created>1725974293205</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725974293205</updated>
+    </task>
+    <task id="LOCAL‎-00028" summary="Refactored &quot;input&quot;/&quot;output&quot; CLI arguments to &quot;import&quot;/&quot;export&quot; (respectively.)">
+      <option name="closed" value="true" />
+      <created>1725974393936</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL‎-00028" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725974393936</updated>
+    </task>
+    <task id="LOCAL‎-00029" summary="Added key logging to crypter.py">
+      <option name="closed" value="true" />
+      <created>1725974408327</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL‎-00029" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725974408327</updated>
+    </task>
+    <task id="LOCAL‎-00030" summary="workspace.xml updated.">
+      <option name="closed" value="true" />
+      <created>1725974425920</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL‎-00030" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1725974425920</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,10 +372,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit." />
-    <MESSAGE value="workspace.xml update" />
-    <MESSAGE value="crypter.py complete." />
-    <MESSAGE value="location.py data class complete." />
     <MESSAGE value="nominatim_api.py complete." />
     <MESSAGE value="crypter.py linting." />
     <MESSAGE value="crypter.py documentation linting." />
@@ -350,6 +392,11 @@
     <MESSAGE value="Added main.py test cases &amp; nominatim_cli.py TODOs." />
     <MESSAGE value="linting for nominatim_args.py &amp; nominatim_cli.py" />
     <MESSAGE value="added print in nominatim_api.py&#10;linting for nominatim_cli.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added print in nominatim_api.py&#10;linting for nominatim_cli.py" />
+    <MESSAGE value="Updated run configurations from &quot;input&quot;/&quot;output&quot; to &quot;import&quot;/&quot;export&quot;" />
+    <MESSAGE value="Updated main.py" />
+    <MESSAGE value="Refactored &quot;input&quot;/&quot;output&quot; CLI arguments to &quot;import&quot;/&quot;export&quot; (respectively.)" />
+    <MESSAGE value="Added key logging to crypter.py" />
+    <MESSAGE value="workspace.xml updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml updated." />
   </component>
 </project>
